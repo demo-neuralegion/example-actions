@@ -24,7 +24,7 @@ jobs:
             apt-get -y install nodejs npm
             npm install -g @neuralegion/nexploit-cli --unsafe-perm=true
       - run:
-          name: Start Nexploit Scan 🏁
+          name: Start NeuraLegion Scan 🏁
           command: |
             SCAN_ID=$(nexploit-cli scan:run                                                 \
             --test csrf dom_xss xss header_security secret_tokens open_buckets                 \
@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Output scan URL
           command: |
-            printf "Scan was started with ID https://nexploit.app/scans/${SCAN_ID}"
+            printf "Scan was started with ID https://app.neuralegion.com/scans/${SCAN_ID}"
       - run:
           name: Wait for issues ⏳
           command: |
